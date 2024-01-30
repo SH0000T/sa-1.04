@@ -3,3 +3,16 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+evan_sp:
+    path: /savoir_plus
+    controller: App\Controller\SitePortfolioController::sp
+evan_cv: 
+    path: /cv
+    controller: App\Controller\SitePortfolioController::cv
+evan_pf: 
+    path: /portfolio
+    controller: App\Controller\SitePortfolioController::pf
+evan_ac:
+    path: /ac
+    controller: App\Controller\SitePortfolioController::ac

@@ -1,3 +1,7 @@
-body {
-    background-color: skyblue;
+body{
+    background-color: aquamarine;
+}
+.competence{
+    width: 80%;
+    height: 50px;
 }

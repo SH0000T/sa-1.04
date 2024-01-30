@@ -1,0 +1,49 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Présentation{% endblock %}
+
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulaire</title>
+</head>
+<body>
+
+<form id="form">
+    <!-- Les autres champs du formulaire ici -->
+    <label for="nom">Nom:</label><br>
+    <input type="text" id="nom" name="nom"><br>
+    <label for="prenom">Prénom:</label><br>
+    <input type="text" id="prenom" name="prenom"><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br>
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message"></textarea><br>
+
+    <!-- Bouton de téléchargement -->
+    <button type="button" id="download">Télécharger le cv </button>
+</form>
+
+<script>
+document.getElementById('download').addEventListener('click', function () {
+    // On vérifie que tous les champs du formulaire sont remplis
+    if (document.getElementById('nom').value === '' || 
+        document.getElementById('prenom').value === '' || 
+        document.getElementById('email').value === '' || 
+        document.getElementById('message').value === '') {
+        alert('Veuillez remplir tous les champs du formulaire avant de télécharger le dossier.');
+        return;
+    }
+
+    var a = document.createElement('a');
+    a.href = 'CV.pdf'; // Remplacez par l'URL référencée du dossier à télécharger
+    a.download = 'Cv_evan_leon_persol'; // Remplacez par le nom que vous souhaitez donner au dossier téléchargé
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+});
+</script>
+</br>
+<p>&copy; 2024. Evan Léon-Persol. Tout droits réservés.</p>
+{% endblock %}
